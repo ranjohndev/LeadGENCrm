@@ -1,0 +1,17 @@
+      
+{% extends "base.html" %}
+{%load static%}
+{% block content %}
+
+    <a href="{% url 'leads:lead-list'%}">Go back to leads</a>
+    <hr />
+    <h1>Assign an agent to this lead</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+         <button type='submit' class="w-full text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-md">
+            Submit
+        </button>
+      </form>
+                        
+{% endblock content%}
